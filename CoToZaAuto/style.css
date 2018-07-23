@@ -1,0 +1,75 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	background-color: #919191;
+}
+
+body * {
+	margin: auto;
+}
+
+.container {
+    width: 80vw;
+    height: 85vh;
+    background-image: url(image.jpg);
+    margin: auto;
+	display: flex;
+}
+
+.car-image {
+    width: 60vw;
+    height: 85vh;
+    //background-image: url(image.jpg);
+}
+
+.dial-panel {
+    width: 20vw;
+    height: 80vh;
+    //background-color: blue;
+	text-align: center;
+	padding-top: 5vh;
+}
+
+.show-points {
+    width: calc(80vw - 20px);
+    height: calc(10vh - 20px);
+    background-color: #252525;
+	color: white;
+	font-size: 30px;
+	padding-top: 20px;
+	padding-left: 20px;
+}
+
+.footer {
+	width: 80vw;
+	height: calc(5vh - 10px);
+	text-align: center;
+	padding-top: 10px;
+	font-size: 15px;
+}
+
+input {
+    width: 200px;
+    font-size: 0.5cm;
+}
+
+input.but {
+    height: 100px;
+    margin-top:10px;
+    font-size:0.6cm;
+}
+
+select {
+    width: 200px;
+    height: 55%;
+    font-size: 0.5cm;
+}
