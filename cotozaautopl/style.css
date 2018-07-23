@@ -1,0 +1,29 @@
+﻿@charset "utf-8";
+body {
+    background-color: #FFF9FD;
+    color: black;
+    display: flex;
+    margin:0;
+    padding:0;
+}
+.center
+{
+    width:60%;
+    height:80vh;
+    margin:auto;
+    background-image:url('tło.jpg');
+}
+.left {
+    float: left;
+    width: 80%;
+    background-color: rgba(0, 0, 0,0.3);
+    height: 80vh;
+}
+.right {
+    float: right;
+    width: 20%;
+    background-color: rgba(255, 255, 255,0.3);
+    height: 80vh;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
