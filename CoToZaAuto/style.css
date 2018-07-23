@@ -28,13 +28,11 @@ body * {
 .car-image {
     width: 60vw;
     height: 85vh;
-    //background-image: url(image.jpg);
 }
 
 .dial-panel {
     width: 20vw;
     height: 80vh;
-    //background-color: blue;
 	text-align: center;
 	padding-top: 5vh;
 }
