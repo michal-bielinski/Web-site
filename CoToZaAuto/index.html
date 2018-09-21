@@ -5,11 +5,13 @@
     <link rel="stylesheet" href="style.css">
     <title>Co To Za Auto</title>
   </head>
-  <body>
+  <body onload="startNewGame()">
     <div class="game-window">
       <div class="curtain"></div>
       <div class="car-image"></div>
-      <div class="dial-panel"></div>
+      <div class="dial-panel">
+        <div id="hint"><p>Podpowiedź</p></div>
+      </div>
     </div>
     <div class="points-display"></div>
     <footer>
