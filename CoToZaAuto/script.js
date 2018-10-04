@@ -34,6 +34,7 @@ function startNewGame() {
     }
   }
 
+  carImage.style.background = "initial";
   if(document.querySelector('#mystyle')) carImage.removeChild(document.querySelector('#mystyle'));
   if(document.querySelector('#mystyle1')) carImage.removeChild(document.querySelector('#mystyle1'));
   if(document.querySelector('#mystyle2')) carImage.removeChild(document.querySelector('#mystyle2'));
@@ -49,18 +50,36 @@ function startNewGame() {
   myNewDiv.style.background = "url(http://auta.lemonline.nazwa.pl/admin/photo/maxi/" + p.carImageId + ".jpg) -" + p.x + "px -" + p.y + "px ";
 
   document.querySelector('#hint').addEventListener('click', function(){
-    if(i === 1) {var x = p.x1; var y = p.y1;} else {var x = p.x2; var y = p.y2;};
-    var newDiv = document.createElement("div");
-    newDiv.setAttribute('id', "mystyle" + i);
-    carImage.appendChild(newDiv);
-    var myNewDiv = document.querySelector('#mystyle' + i);
-    myNewDiv.style.position = "absolute";
-    myNewDiv.style.top = y + "px";
-    myNewDiv.style.left = x + "px";
-    myNewDiv.style.width = 80 + "px";
-    myNewDiv.style.height = 80 + "px";
-    myNewDiv.style.background = "url(http://auta.lemonline.nazwa.pl/admin/photo/maxi/" + p.carImageId + ".jpg) -" + x + "px -" + y + "px ";
-    if(i === 2) i = 0;
+    if(i === 1) {
+      var x = p.x1;
+      var y = p.y1;
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute('id', "mystyle" + i);
+      carImage.appendChild(newDiv);
+      var myNewDiv = document.querySelector('#mystyle' + i);
+      myNewDiv.style.position = "absolute";
+      myNewDiv.style.top = y + "px";
+      myNewDiv.style.left = x + "px";
+      myNewDiv.style.width = 80 + "px";
+      myNewDiv.style.height = 80 + "px";
+      myNewDiv.style.background = "url(http://auta.lemonline.nazwa.pl/admin/photo/maxi/" + p.carImageId + ".jpg) -" + x + "px -" + y + "px ";
+    } else if(i === 2) {
+      var x = p.x2;
+      var y = p.y2;
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute('id', "mystyle" + i);
+      carImage.appendChild(newDiv);
+      var myNewDiv = document.querySelector('#mystyle' + i);
+      myNewDiv.style.position = "absolute";
+      myNewDiv.style.top = y + "px";
+      myNewDiv.style.left = x + "px";
+      myNewDiv.style.width = 80 + "px";
+      myNewDiv.style.height = 80 + "px";
+      myNewDiv.style.background = "url(http://auta.lemonline.nazwa.pl/admin/photo/maxi/" + p.carImageId + ".jpg) -" + x + "px -" + y + "px ";
+    } else if(i === 3) {
+      i = 0;
+      carImage.style.background = "url(http://auta.lemonline.nazwa.pl/admin/photo/maxi/" + p.carImageId + ".jpg)";
+    }
     i += 1;
   });
 
