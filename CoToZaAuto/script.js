@@ -11,6 +11,9 @@ function startNewGame() {
   console.clear();
   var rand = Math.floor(Math.random() * images.length);
   var carImage = document.querySelector('.car-image');
+  var dialPanel = document.querySelector('.dial-panel');
+  var hint = document.querySelector('#hint');
+  var text = document.createTextNode("Podpowiedź");
   var i = 1;
 
   var p = {
@@ -34,7 +37,14 @@ function startNewGame() {
     }
   }
 
-  carImage.style.background = "initial";
+  if(!hint) {
+    carImage.style.background = "initial";
+    var newHint = document.createElement("div");
+    dialPanel.appendChild(newHint);
+    newHint.appendChild(text);
+    newHint.setAttribute('id', "hint");
+  }
+
   if(document.querySelector('#mystyle')) carImage.removeChild(document.querySelector('#mystyle'));
   if(document.querySelector('#mystyle1')) carImage.removeChild(document.querySelector('#mystyle1'));
   if(document.querySelector('#mystyle2')) carImage.removeChild(document.querySelector('#mystyle2'));
@@ -49,7 +59,7 @@ function startNewGame() {
   myNewDiv.style.height = 80 + "px";
   myNewDiv.style.background = "url(http://auta.lemonline.nazwa.pl/admin/photo/maxi/" + p.carImageId + ".jpg) -" + p.x + "px -" + p.y + "px ";
 
-  document.querySelector('#hint').addEventListener('click', function(){
+  hint.addEventListener('click', function(){
     if(i === 1) {
       var x = p.x1;
       var y = p.y1;
@@ -78,6 +88,7 @@ function startNewGame() {
       myNewDiv.style.background = "url(http://auta.lemonline.nazwa.pl/admin/photo/maxi/" + p.carImageId + ".jpg) -" + x + "px -" + y + "px ";
     } else if(i === 3) {
       i = 0;
+      dialPanel.removeChild(hint);
       carImage.style.background = "url(http://auta.lemonline.nazwa.pl/admin/photo/maxi/" + p.carImageId + ".jpg)";
     }
     i += 1;
